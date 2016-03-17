@@ -1,0 +1,17 @@
+{
+    "contents" : "###\n### Problem Set 06\n### Taishi Muraoka\n### March 21\n###\n\n\nlibrary(devtools); library(roxygen2)\n\nsetwd(\"C:/Users/Taishi/Documents/PS6/PS6Package\")\n\naddSquares <- function(x, y){\n  return(list(square=(x^2 + y^2), x = x, y = y))\n}\n\ndump(\"addSquares\", file=\"addSquares.R\")\nsource(\"addSquares.R\")\npackage.skeleton(name = \"squaresPack\",\n                 list = c(\"addSquares\"))\ncurrent.code <- as.package(\"squaresPack\")\n",
+    "created" : 1458159460367.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3067977797",
+    "id" : "77E0D3A3",
+    "lastKnownWriteTime" : 1458163219,
+    "path" : "~/PS6/Muraoka_ProblemSet06.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
