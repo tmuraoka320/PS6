@@ -2,9 +2,12 @@
 
 export()
 export(createCandidate)
+export(createRace)
 export(propNeeded)
 exportClasses(Candidate)
+exportClasses(Race)
 exportClasses(Remaining)
 exportMethods(createCandidate)
+exportMethods(createRace)
 exportMethods(initialize)
 exportMethods(propNeeded)

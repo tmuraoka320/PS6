@@ -22,7 +22,7 @@ document(current.code)
 
 
 ##
-## test createCandidate
+## test createCandidate()
 ##
 help(createCandidate)
 
@@ -49,9 +49,11 @@ print(obama)
 
 
 ##
-## test proNeeded
+## test proNeeded()
 ##
 help(propNeeded)
+
+obama <- createCandidate("obama", 333, "Republican")
 
 propNeeded(obama, 1500) # this works
 
@@ -68,5 +70,32 @@ as(object=obama, Class="Remaining") # moving between classes
 
 
 ##
+## test createRace()
 ##
+help(createRace)
+
+obama <- createCandidate("obama", 333, "Republican")
+
+obama2 <- createCandidate("obama2", 30, "Republican")
+
+obama3 <- createCandidate("obama3", 500, "Republican")
+
+bush <- createCandidate("bush", 333, "Democratic")
+
+bush2 <- createCandidate("bush2", 2400, "Republican")
+
+cand_list <- list(obama, obama2, obama3, bush, bush2)
+
+createRace(cand_list[1:3]) # this works
+
+createRace(cand_list[1:4]) # error because one candidate "bush" is from Democratic
+
+createRace(cand_list[c(1:3,5)]) # error because there is the number delegates won is
+                                # greater than the number of the total delegates caused
+                                # by the candidate "bush2"
+
+
+
+##
+## test plot
 ##

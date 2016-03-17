@@ -36,6 +36,6 @@ createCandidate("Bush", 400, "Republican")
 Taishi Muraoka \email{tmuraoka@wustl.edu}
 }
 \seealso{
-\code{\link{PropNeeded}}
+\code{\link{PropNeeded}}, \code{\link{createRace}}
 }
 

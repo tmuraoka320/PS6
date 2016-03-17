@@ -22,9 +22,9 @@
 #' obama <- createCandidate("Obama", 333, "Democratic")
 #' propNeeded(obama, 1500)
 #'
-#' @seealso \code{\link{createCandidate}}
+#' @seealso \code{\link{createCandidate}}, \code{\link{createRace}}
 #' 
-#' @aliases propNeeded,ANY-method
+#' @aliases propNeeded,Candidate-method
 #' 
 #' @rdname propNeeded
 #' 

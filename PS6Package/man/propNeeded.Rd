@@ -2,7 +2,7 @@
 % Please edit documentation in R/propNeeded.R
 \name{propNeeded}
 \alias{propNeeded}
-\alias{propNeeded,ANY-method}
+\alias{propNeeded,Candidate-method}
 \title{The Proportion of Remaining Delegates Required for Winning}
 \usage{
 propNeeded(candidate, remaining, ...)
@@ -35,6 +35,6 @@ propNeeded(obama, 1500)
 Taishi Muraoka: \email{tmuraoka@wustl.edu}
 }
 \seealso{
-\code{\link{createCandidate}}
+\code{\link{createCandidate}}, \code{\link{createRace}}
 }
 

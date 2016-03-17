@@ -22,7 +22,7 @@
 #' createCandidate("Obama", 150, "Democratic")
 #' createCandidate("Bush", 400, "Republican")
 #' 
-#' @seealso \code{\link{PropNeeded}}
+#' @seealso \code{\link{PropNeeded}}, \code{\link{createRace}}
 #' 
 #' @aliases createCandidate,ANY-method
 #' 

@@ -6,7 +6,7 @@
 \alias{initialize,Candidate-method}
 \title{A Candidate Object}
 \description{
-Objects of class \code{PS6Package} are created by the \code{createCandidate} function
+Objects of class \code{Candidate} are created by the \code{createCandidate} function
 }
 \details{
 An object of the class 'Candidate' has the following slots:
