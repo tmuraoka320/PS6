@@ -34,4 +34,13 @@ setMethod("initialize", "Remaining",
           function(.Object, ...){
             value=callNextMethod()
             return(value)
-          }) 
+          })
+
+#' @export
+setAs(from="Candidate", to="Remaining",
+      def=function(from){
+        new("Remaining",
+            name=from@name,
+            delegatesWon=from@delegatesWon,
+            party=from@party,
+            delegatesNeeded=from@delegatesNeeded)})

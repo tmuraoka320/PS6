@@ -53,7 +53,9 @@ print(obama)
 ##
 help(propNeeded)
 
-propNeeded(obama, 1500)
+propNeeded(obama, 1500) # this works
+
+propNeeded("aaa", 1500) # error because the first argument is not a Candidate class
 
 propNeeded(obama, "ten") # error because remaining should be numeric
 
@@ -61,4 +63,10 @@ propNeeded(obama, 2000000000) # error because the remaining number is inaccurate
 
 propNeeded(obama, 100) # error because there is no chance of winning
 
-as(object=obama, Class="Remaining")
+as(object=obama, Class="Remaining") # moving between classes
+
+
+
+##
+##
+##

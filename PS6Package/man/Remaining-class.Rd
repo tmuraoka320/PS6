@@ -6,7 +6,7 @@
 \alias{initialize,Remaining-method}
 \title{A Remaining object}
 \description{
-Object of class \code{Remaining} as created by the \code{propNeeded} function
+Objects of class \code{Remaining} are created by the \code{propNeeded} function
 }
 \details{
 An object of the class `Squares' has the following slots:

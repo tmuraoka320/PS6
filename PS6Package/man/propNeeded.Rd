@@ -2,9 +2,10 @@
 % Please edit documentation in R/propNeeded.R
 \name{propNeeded}
 \alias{propNeeded}
+\alias{propNeeded,ANY-method}
 \title{The Proportion of Remaining Delegates Required for Winning}
 \usage{
-propNeeded(candidate, remaining)
+propNeeded(candidate, remaining, ...)
 }
 \arguments{
 \item{candidate}{An object of class "Candidate"}
@@ -26,11 +27,14 @@ An object of subclass "Remaining" containing
 Calculate the proportion of delegates remaining needed for the candidate to win
 }
 \examples{
-obama <- createCandidate("Obama", 1500, "Democratic")
-propNeeded(obama, )
+obama <- createCandidate("Obama", 333, "Democratic")
+propNeeded(obama, 1500)
 
 }
 \author{
-Taishi Muraoka
+Taishi Muraoka: \email{tmuraoka@wustl.edu}
+}
+\seealso{
+\code{\link{createCandidate}}
 }
 

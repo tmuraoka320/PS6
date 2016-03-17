@@ -16,69 +16,70 @@
 #'  \item{remain_prop}{The proportion of delegates remaining needed for the candidate 
 #'                     to win}
 #'
-#' @author Taishi Muraoka
+#' @author Taishi Muraoka: \email{tmuraoka@@wustl.edu}
 #'
 #' @examples
-#' obama <- createCandidate("Obama", 1500, "Democratic")
-#' propNeeded(obama, )
+#' obama <- createCandidate("Obama", 333, "Democratic")
+#' propNeeded(obama, 1500)
 #'
+#' @seealso \code{\link{createCandidate}}
+#' 
+#' @aliases propNeeded,ANY-method
+#' 
+#' @rdname propNeeded
+#' 
 #' @export
-propNeeded <- function(candidate, remaining){
-  
-  # set s4 class "Remaining", which is a subclass of "Candidate"
-  # name is character, delegatesWon is numeric, party is character,
-  # delegatesNeeded is numeric, and remain_prop is numeric
-  
-  
-  setAs(from="Candidate", to="Remaining",
-        function(candidate){
-          new("Remaining",
-              name=candidate@name,
-              delegatesWon=candidate@delegatesWon,
-              party=candidate@party,
-              delegatesNeeded=candidate@delegatesNeeded,
-              remain_prop=prop)
-        })
-  
-  if(is.numeric(remaining)==FALSE){
-    stop("remaining should be numeric!")
-  }
-  else{
-    if(candidate@party=="Democratic"){
-      if(remaining < 0 | remaining > 4765 - candidate@delegatesWon){
-        stop("Invalid number of remaining delegates!")
-      }
-      else{
-        need <- candidate@delegatesNeeded - candidate@delegatesWon
-        if(need > remaining){
-          stop("This candidate has no chance of winning!")
-        }
-        else{
-          prop <- need/remaining
-        }
-      }
-    }
-    else{
-      if(remaining < 0 | remaining > 2472 - candidate@delegatesWon){
-        stop("Invalid number of remaining delegates!")
-      }
-      else{
-        need <- candidate@delegatesNeeded - candidate@delegatesWon
-        if(need > remaining){
-          stop("This candidate has no chance of winning!")
-        }
-        else{
-          prop <- need/remaining
-        }
-      }
-    }
-  }
-  newobject <- new("Remaining", 
-                   name=candidate@name,
-                   delegatesWon=candidate@delegatesWon,
-                   party=candidate@party,
-                   delegatesNeeded=candidate@delegatesNeeded,
-                   remain_prop=prop)
-  
-  return(newobject)
-}
+setGeneric(name="propNeeded",
+           def=function(candidate, remaining, ...){
+             standardGeneric("propNeeded")
+             })
+
+#' @export
+setMethod("propNeeded",
+          definition=function(candidate, remaining){
+            if(class(candidate)!="Candidate"){
+              stop("candidate should be a Candidate class")
+            }
+            else{
+              if(is.numeric(remaining)==FALSE){
+                stop("remaining should be numeric!")
+              }
+              else{
+                if(candidate@party=="Democratic"){
+                  if(remaining < 0 | remaining > 4765 - candidate@delegatesWon){
+                    stop("Invalid number of remaining delegates!")
+                  }
+                  else{
+                    need <- candidate@delegatesNeeded - candidate@delegatesWon
+                    if(need > remaining){
+                      stop("This candidate has no chance of winning!")
+                    }
+                    else{
+                      prop <- need/remaining
+                    }
+                  }
+                }
+                else{
+                  if(remaining < 0 | remaining > 2472 - candidate@delegatesWon){
+                    stop("Invalid number of remaining delegates!")
+                  }
+                  else{
+                    need <- candidate@delegatesNeeded - candidate@delegatesWon
+                    if(need > remaining){
+                      stop("This candidate has no chance of winning!")
+                    }
+                    else{
+                      prop <- need/remaining
+                    }
+                  } 
+                }
+              }
+              newobject <- new("Remaining", 
+                               name=candidate@name,
+                               delegatesWon=candidate@delegatesWon,
+                               party=candidate@party,
+                               delegatesNeeded=candidate@delegatesNeeded,
+                               remain_prop=prop)
+              return(newobject)
+            }
+          })
