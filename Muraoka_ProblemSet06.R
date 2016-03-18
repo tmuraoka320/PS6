@@ -28,6 +28,8 @@ help(createCandidate)
 
 createCandidate("obama", 333, "Republican") # this works
 
+class(createCandidate("obama", 333, "Republican"))
+
 createCandidate(1, 333, "Republican") # error because name should not be a number
 
 createCandidate("obama", -200, "Republican") # error because the number is strange
@@ -38,7 +40,7 @@ createCandidate("obama", 333, "Whig") # error because party should be Democratic
 
 
 ##
-## try show() and print()
+## test show() and print()
 ##
 obama <- createCandidate("obama", 333, "Republican")
 
@@ -66,6 +68,8 @@ propNeeded(obama, 2000000000) # error because the remaining number is inaccurate
 propNeeded(obama, 100) # error because there is no chance of winning
 
 as(object=obama, Class="Remaining") # moving between classes
+
+class(as(object=obama, Class="Remaining"))
 
 
 
@@ -97,5 +101,10 @@ createRace(cand_list[c(1:3,5)]) # error because there is the number delegates wo
 
 
 ##
-## test plot
+## test plot()
 ##
+help(plotRace)
+
+obamas <- createRace(cand_list[1:3])
+
+plot(obamas, "ANYTHING")

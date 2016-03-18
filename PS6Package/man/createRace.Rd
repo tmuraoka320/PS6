@@ -2,7 +2,8 @@
 % Please edit documentation in R/createRace.R
 \name{createRace}
 \alias{createRace}
-\alias{createRace,Candidate-method}
+\alias{createRace,Race-method}
+\alias{plot,Race-method}
 \title{Create an Object with class "Race"}
 \usage{
 createRace(candidate_list, ...)
@@ -12,9 +13,11 @@ createRace(candidate_list, ...)
 }
 \value{
 An object of class "Candidate" containing
- \item{all_candidates}{The names of all candidates}
+ \item{all_candidates}{The vector of the names of all candidates}
+ \item{delegatesWon}{The vector of the number of delegates won by each candidate}
  \item{party}{The name of the candidates' party}
  \item{remaining}{The number of remaining delegates}
+ \item{delegatesRequired}{The vector of the number of delegates required for each candidate in order to win}
 }
 \description{
 Create an instance with S4 class "Race"
@@ -25,6 +28,8 @@ bush <- createCandidate("bush", 30, "Republican")
 gore <- createCandidate("gore", 500, "Republican")
 cand_list <- list(obama, bush, gore)
 createRace(cand_list)
+candidates <- createRace(cand_list)
+plot(candidates, "ANYTHING")
 
 }
 \author{
