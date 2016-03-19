@@ -3,7 +3,9 @@
 \docType{class}
 \name{Candidate-class}
 \alias{Candidate-class}
-\alias{initialize,Candidate-method}
+\alias{initialize,Candidate-method,}
+\alias{print,Candidate-method}
+\alias{show,Candidate-method,}
 \title{A Candidate Object}
 \description{
 Objects of class \code{Candidate} are created by the \code{createCandidate} function

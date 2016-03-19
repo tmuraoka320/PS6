@@ -67,7 +67,7 @@ propNeeded(obama, 2000000000) # error because the remaining number is inaccurate
 
 propNeeded(obama, 100) # error because there is no chance of winning
 
-as(object=obama, Class="Remaining") # moving between classes
+as(object=obama, Class="Remaining") # moving from class "Candidate" to class "Remaining"
 
 class(as(object=obama, Class="Remaining"))
 
@@ -108,3 +108,9 @@ help(plotRace)
 obamas <- createRace(cand_list[1:3])
 
 plot(obamas, "ANYTHING")
+
+# The plot shows two bars for each candidate. A dark-black bar indicates the number
+# of delegates each candidate won, and the light-black bar presents the number of
+# delegates each candidate needed in order to win the nomination. The dotted red line
+# is the number of remaining delegates. Hence, if a light-black bar surpasses that
+# line, a candidate has no chance of winning.

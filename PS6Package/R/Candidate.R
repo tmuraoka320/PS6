@@ -15,7 +15,7 @@
 #'
 #' @author Taishi Muraoka: \email{tmuraoka@@wustl.edu}
 #' 
-#' @aliases Candidate-class initialize,Candidate-method
+#' @aliases Candidate-class initialize,Candidate-method, show,Candidate-method, print,Candidate-method
 #' 
 #' @rdname Candidate-class
 #' 
@@ -32,3 +32,38 @@ setMethod("initialize", "Candidate",
             value=callNextMethod()
             return(value)
           })
+
+#' @export
+setMethod("show", "Candidate",
+          function(object){
+            cat(sprintf("An object of class '%s'", class(object)))
+            cat("\nslot 'name':\n")
+            print(object@name)
+            cat("\nslot 'delegatesWon':\n")
+            print(object@delegatesWon)
+            cat("\nslot 'party':\n")
+            print(object@party)
+            cat("\nslot 'delegatesNeeded':\n")
+            print(object@delegatesNeeded)
+            if(class(object)=="Remaining"){
+              cat("\nslot 'remain_prop':\n")
+              print(object@remain_prop)
+            }
+          })
+
+#' @export
+print.Candidate <- function(Candidate_object){
+  cat(sprintf("An object of class '%s'", class(Candidate_object)))
+  cat("\nslot 'name':\n")
+  print(Candidate_object@name)
+  cat("\nslot 'delegatesWon':\n")
+  print(Candidate_object@delegatesWon)
+  cat("\nslot 'party':\n")
+  print(Candidate_object@party)
+  cat("\nslot 'delegatesNeeded':\n")
+  print(Candidate_object@delegatesNeeded)
+  if(class(Candidate_object)=="Remaining"){
+    cat("\nslot 'remain_prop':\n")
+    print(Candidate_object@remain_prop)
+  }
+}
